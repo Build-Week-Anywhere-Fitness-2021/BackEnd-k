@@ -87,8 +87,8 @@ function getFavoriteClass(id) {
 }
 
 function updateClass(id, changes) {
-  return db('class')
-    .where({id}).update(changes);
+  return db('class as c')
+    .where('c.classId', id).update(changes);
 }
 
 function removeClass(id) {
