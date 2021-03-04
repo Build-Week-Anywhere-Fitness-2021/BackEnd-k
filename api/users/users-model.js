@@ -46,15 +46,15 @@ function getClass() {
 function getClassById(classId) {
   return db('class as c')
   .select('c.name', 
-  'c.instructor_name', 
+  'c.instructor', 
   'c.type', 
-  'c.intensity',
+  'c.intensityLevel',
   'c.date',
-  'c.start_time',
+  'c.startTime',
   'c.location',
-  'c.max_size',
+  'c.maxRegistered',
   'c.duration',
-  'c.number_attendees')
+  'c.registered')
   .where('c.classId',classId)
   .first()
 }

@@ -12,17 +12,17 @@ exports.up = function(knex) {
   
     .createTable('class', tbl => {
         tbl.increments('classId');
-        tbl.string('name',128).notNullable().unique();
-        tbl.string('instructor_name',128).notNullable();
-        tbl.string('type',128).notNullable();
-        tbl.string('intensity',128).notNullable();
+        tbl.string('name',128).notNullable().unique(); 
+        tbl.string('instructor',128).defaultTo('TBD'); 
+        tbl.string('type',128).notNullable(); 
+        tbl.string('intensityLevel',128).notNullable(); 
         tbl.string('date',128).notNullable();
-        tbl.string('start_time',128).notNullable();
-        tbl.string('location',128).notNullable();
-        tbl.integer('max_size',128).notNullable();
-        tbl.integer('duration',128).notNullable();
-        tbl.integer('number_attendees',128).defaultTo(0);
-        tbl.string('punch_pass',128).notNullable();
+        tbl.string('startTime',128).notNullable(); 
+        tbl.string('location',128).notNullable(); 
+        tbl.integer('maxRegistered',128).notNullable(); 
+        tbl.integer('duration',128).notNullable(); 
+        tbl.integer('registered',128).defaultTo(0);  
+        tbl.string('punch_pass',128);
       })
     
     .createTable('user_classes', tbl => {
