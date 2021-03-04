@@ -17,14 +17,14 @@ https://some1.herokuapp.com
 
 | Auth   | Endpoint                         | Required         | Notes                                                           |
 | ------ | -------------------------------- | ---------------- | --------------------------------------------------------------- |
-| GET    | /api/auth/instructor/classes     | None             | Gets list of classes                                            |
-| POST   | /api/auth/instructor/classes     | name, instructor_name, type, intensity,location, date, max_size, duration  | Creates a new class. Date is formatted as follows "yyyy-mm-dd" |
-| PUT    | /api/auth/instructor/classes/:id | any key          | Updates the specific key value(s) from a class with the given Id|
-| DELETE | /api/auth/instructor/classes/:id | None             | Deletes the WHOLE class with given Id                           |
+| GET    | /api/instructor     | None             | Gets list of classes                                            |
+| POST   | /api/instructor     | name, instructor_name, type, intensity,location, date, max_size, duration  | Creates a new class. Date is formatted as follows "yyyy-mm-dd" |
+| PUT    | /api/instructor/:id | any key          | Updates the specific key value(s) from a class with the given Id|
+| DELETE | /api/instructor:id  | None             | Deletes the WHOLE class with given Id                           |
 
 ### For Users - token is required
 
-| Auth | Endpoint                    | Required |  Notes                                                                         |
-| ---- | --------------------------- | -------- |  ----------------------------------------------------------------------------- |
-| GET  | /api/auth/users/classes     | N/A      |  Gets all classes                                                              |
-| GET  | /api/auth/users/classes/:id | id       |  Gets the class with that ID                                                   |
+| Auth | Endpoint                    | Required |  Notes                                                            |
+| ---- | --------------------------- | -------- |  ---------------------------------------------------------------- |
+| GET  | /api/users     | N/A      |  Gets all classes                                                              |
+| GET  | /api/users/:id | id       |  Gets the class with that ID                                                   |
