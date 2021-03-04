@@ -53,7 +53,7 @@ router.put('/:id', (req, res) => {
   Class.updateClass(id, changes)
     .then(Class => {
       if (Class) {
-        res.status(200).json({Class});
+        res.status(200).json(changes);
       } else {
         res.status(404).json({error: 'please provide right information'});
       }

@@ -19,7 +19,7 @@ server.get('/', (req, res) => {
 });
   
 server.use('/api/auth', authRouter);
-server.use('/api/auth/users/classes', userRouter);
-server.use('/api/auth/instructor/classes', instructorRouter);
+server.use('/api/users', userRouter);
+server.use('/api/instructor', instructorRouter);
 
 module.exports = server
