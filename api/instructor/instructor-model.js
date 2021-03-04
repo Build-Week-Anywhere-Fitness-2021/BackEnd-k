@@ -11,7 +11,7 @@ module.exports = {
 
 async function addClass(data) {
   try {
-    const [id] = await db("class").insert(data, "id");
+    const [id] = await db("class").insert(data, "classId");
     return  getClassById(id);
   } catch (error) {
     throw error;
@@ -38,7 +38,7 @@ function updateClass(id, changes) {
 
 
 function removeClass(classid) {
-  return db("class").where("id", classid).del();
+  return db("class").where("classId", classid).del();
 }
 
 function getClassById(id) {
