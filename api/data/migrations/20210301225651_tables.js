@@ -12,7 +12,7 @@ exports.up = function(knex) {
   
     .createTable('class', tbl => {
         tbl.increments('classId');
-        tbl.string('name',128).notNullable().unique(); 
+        tbl.string('name',128).notNullable(); 
         tbl.string('instructor',128).defaultTo('TBD'); 
         tbl.string('type',128).notNullable(); 
         tbl.string('intensityLevel',128).notNullable(); 
