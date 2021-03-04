@@ -10,12 +10,8 @@ module.exports = {
 };
 
 async function addClass(data) {
-  try {
-    const [id] = await db("class").insert(data, "classId");
+  const [id] = await db('class').insert(data, 'classId');
     return  getClassById(id);
-  } catch (error) {
-    throw error;
-  }
 }
 
 function getClass() {
@@ -42,6 +38,8 @@ function removeClass(classid) {
 }
 
 function getClassById(id) {
-  return db('class')
-    .where({id}).first();
+  return db('class as c')
+    .select('*')
+    .where('c.classId', id)
+    .first();
 }
